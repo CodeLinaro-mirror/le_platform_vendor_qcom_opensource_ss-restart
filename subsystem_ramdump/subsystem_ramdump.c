@@ -562,12 +562,11 @@ int main(int argc, char *argv[])
 		goto cleanup_ramdump;
 	}
 
-	/* Loop forever*/
-	while (1) {
-		;
+	/* wait for dev_coredump_hdl thread to terminate */
+	ret = pthread_join(dev_coredump_hdl, NULL);
+	if (ret != 0) {
+		ALOGE("pthread_join failed for thread:%lu, error:%d", dev_coredump_hdl, ret);
 	}
-
-	ret = ssr_stop_thread(dev_coredump_hdl, SIGUSR2);
 
 cleanup_ramdump:
 	ssr_ramdump_cleanup();
