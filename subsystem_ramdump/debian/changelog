@@ -1,0 +1,8 @@
+subsystem-ramdump (1.0.0) unstable; urgency=medium
+
+  * Initial Debian packaging, converted from Yocto BitBake recipe
+    subsystem-ramdump_git.bb.
+  * Build with autotools (autoreconf + --with-glib --with-systemd).
+  * Package: subsystem-ramdump (daemon + systemd service).
+
+ -- zhijunl <zhijunl@qti.qualcomm.com>  Mon, 03 Aug 2026 00:00:00 +0000

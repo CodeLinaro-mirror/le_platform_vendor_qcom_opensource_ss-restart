@@ -1,0 +1,24 @@
+Source: subsystem-ramdump
+Section: utils
+Priority: optional
+Maintainer: zhijunl <zhijunl@qti.qualcomm.com>
+Build-Depends: debhelper-compat (= 13),
+               autoconf,
+               automake,
+               libtool,
+               pkgconf,
+               libglib2.0-dev,
+               libsystemd-dev
+Standards-Version: 4.6.0
+Homepage: http://support.cdmatech.com
+Rules-Requires-Root: no
+
+Package: subsystem-ramdump
+Architecture: arm64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Subsystem Ramdump Service
+ QTI subsystem ramdump service collects peripheral subsystem ramdumps and
+ saves them to a path on the storage device. Used when SSR is disabled and
+ a subsystem such as ADSP or modem crashes, to capture a RAM dump for
+ debugging. Typically used during development; SSR is recommended for
+ commercial devices.

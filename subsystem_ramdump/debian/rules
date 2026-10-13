@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+# debian/rules - Debian build rules for subsystem-ramdump
+
+%:
+	dh $@ --buildsystem=autoconf
+
+execute_before_dh_auto_configure:
+	autoreconf -fi
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--with-glib \
+		--with-systemd
